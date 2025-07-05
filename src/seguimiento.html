@@ -1,0 +1,16 @@
+// === seguimiento.html ===
+<div class="container">
+  <? if (rol === 'Monitor') { ?>
+  <table id="tablaMonitor" class="highlight"></table>
+  <? } else { ?>
+  <div class="input-field">
+    <select id="periodo">
+      <option value="24">\u00daltimas 24 h</option>
+      <option value="168">7 d\u00edas</option>
+      <option value="720">30 d\u00edas</option>
+    </select>
+  </div>
+  <table id="tablaCoord" class="highlight"></table>
+  <? } ?>
+</div>
+// === End seguimiento.html ===
