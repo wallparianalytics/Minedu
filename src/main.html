@@ -19,9 +19,9 @@
   <? } ?>
   <li class="tab col s3"><a href="#ayuda">Ayuda</a></li>
 </ul>
-<div id="seg"><?!= include('seguimiento'); ?></div>
+<div id="seg"><?!= seguimientoPartial ?></div>
 <? if (rol === 'Coordinador') { ?>
-<div id="est"><?!= include('estadisticas'); ?></div>
+<div id="est"><?!= estadisticasPartial ?></div>
 <? } ?>
 <div id="ayuda">
   <div class="container">

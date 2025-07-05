@@ -37,10 +37,21 @@ function login(email, dni) {
 
   logAttempt(email, dni, 'exito');
 
+  const segTpl = HtmlService.createTemplateFromFile('seguimiento');
+  segTpl.rol = role;
+  segTpl.idMonitor = idMonitor;
+  const seguimientoHtml = segTpl.evaluate().getContent();
+
+  const estTpl = HtmlService.createTemplateFromFile('estadisticas');
+  estTpl.rol = role;
+  const estadisticasHtml = estTpl.evaluate().getContent();
+
   const tpl = HtmlService.createTemplateFromFile('main');
   tpl.rol = role;
   tpl.idMonitor = idMonitor;
   tpl.nombres = nombres;
+  tpl.seguimientoPartial = seguimientoHtml;
+  tpl.estadisticasPartial = estadisticasHtml;
   const html = tpl.evaluate().getContent();
   return { html: html };
 }
